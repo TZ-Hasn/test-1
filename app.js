@@ -128,7 +128,7 @@ app.get('/apply', (req, res) => {
     res.render('apply.pug');
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
     console.log(`The server is started at http://localhost:${port}`)
 })
 
