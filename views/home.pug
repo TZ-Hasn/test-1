@@ -1,0 +1,92 @@
+extends layout.pug
+block style
+  link(rel="stylesheet", href="/stylesheets/home-page.css")
+block bodyContent
+    // Body Content
+    section#body-container
+      // Slideshow container
+      .slideshow-container
+        i.fa-solid.fa-circle-left.prev-btn
+        .slider
+          .slide.active
+            img(src='/img/coverage_.jpg' alt='')
+            .info
+              h2.poppins High Coverage Areas
+              p.seoge
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                | incididunt ut
+                | labore
+                | et dolore magna aliqua.
+          .slide
+            img(src='/img/call.jpg' alt='')
+            .info
+              h2.poppins High Calling Quality
+              p.seoge
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                | incididunt ut
+                | labore
+                | et dolore magna aliqua.
+          .slide
+            img(src='/img/liveStreaming.jpg' alt='')
+            .info
+              h2.poppins 4K Live Streaming
+              p.seoge
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                | incididunt ut
+                | labore
+                | et dolore magna aliqua.
+          .slide
+            img(src='/img/fiber2.jpg' alt='')
+            .info
+              h2.poppins Fiber Connection
+              p.seoge
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                | incididunt ut
+                | labore
+                | et dolore magna aliqua.
+          .slide
+            img(src='/img/hands-1666433204872-7518.jpg' alt='')
+            .info
+              h2.poppins One CLick Resoponse
+              p.seoge
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                | incididunt ut
+                | labore
+                | et dolore magna aliqua.
+          .navigation
+          .navigation-visibility
+            .slide-icon.active
+            .slide-icon
+            .slide-icon
+            .slide-icon
+            .slide-icon
+        i.fa-solid.fa-circle-right.next-btn
+        .tv-stand
+        .tv-pad
+      // Packages Cards
+      // <h1>Packages</h1>
+      .cards-container
+        .card
+          .icon
+            i.fa-solid.fa-globe
+          .content
+            h2 Connection Speed: 4 Mbps
+            h2 Monthly Fee: Rs.1200/- 
+            a(href='/Apply') Get it Now
+        .card
+          .icon
+            i.fa-solid.fa-gem
+          .content
+            h2 Connection Speed: 8 Mbps
+            h2 Monthly Fee: Rs.1800/- 
+            a(href='/Apply') Get it Now
+        .card
+          .icon
+            i.fa-solid.fa-rocket
+          .content
+            h2 Connection Speed: 16 Mbps
+            h2 Monthly Fee: Rs.2400/- 
+            a(href='/Apply') Card Three
+//- Sending to block scripts js scripts
+block scripts 
+  script(src='/js/home-slider.js')

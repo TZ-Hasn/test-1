@@ -1,0 +1,42 @@
+extends layout.pug
+block style 
+    link( rel="stylesheet" href="/stylesheets/Login-Form.css")
+    link( rel="stylesheet" href="/stylesheets/Antena-Stylesheet.css")
+block bodyContent
+    #container
+      #form-container(action='login.php' method='post')
+        // Antena
+        #antena-container
+          #antena
+            i#line
+            i#circle
+            i#signal-1.signals
+            i#signal-2.signals
+            i#signal-3.signals
+        #logo-container
+          a(href="/")
+            img(src='./img/Resized-Logo.png' alt='')
+        #avatar-container
+          img(src='./img/avatar.png' alt='User')
+        // Login Form
+        form#form(action='/login' method='post')
+          h3 Log in
+          .input-box
+            ion-icon.icon(name='person-outline')
+            input(type='text' name='username' placeholder='Enter Your Username' required='')
+          .input-box
+            ion-icon.icon(name='lock-closed-outline')
+            input#password(type='password' name='password' placeholder='Enter Your Password' required='')
+            .eye-container
+              ion-icon.icon.open(name='eye-outline')
+              ion-icon.icon.closed(name='eye-off-outline')
+          .input-box
+            input(type='submit' value='Log in')
+          .links
+            a#forgot(href='/Signup') Create Account?
+            a#forgot(href='#') Forgot Password?
+
+block scripts
+    script(src='/js/login.js')
+    script(type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js")
+    script(nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js")

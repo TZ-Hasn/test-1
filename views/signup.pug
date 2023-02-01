@@ -1,0 +1,86 @@
+extends layout.pug
+block style 
+    link(rel="stylesheet", href="/stylesheets/Antena-Stylesheet.css")
+    link(rel="stylesheet", href="/stylesheets/signup.css")
+block headScript
+  script(src="/js/jquery-3.6.1.min.js")
+  script(src="/js/jquery.inputmask.bundle.js")
+block bodyContent 
+  #container
+    #form-container
+      //- Antena
+      #antena-container
+        #antena
+          i#line
+          i#circle
+          i#signal-1.signals
+          i#signal-2.signals
+          i#signal-3.signals
+      #logo-container
+        img(src='/img/Resized-Logo.png' alt='')
+      //- Login Form
+      form#form(action='/signup' method='post')
+        //- Heading
+        h3 Sign Up
+        //- User Name
+        .input-box
+          label.label(for='username')
+            | Name
+            sup *
+          input(type='text' name='username' placeholder='Enter Your Name' required='')
+        //- Email
+        .input-box
+          label.label(for='username')
+            | Email
+            sup *
+          input(type='email' name='email' placeholder='Enter Your Email' required='')
+        dvi#email-err
+          i#mail-err.valid Please Provide a valid Email Address.
+        //- CNIC
+        .input-box
+          label.label(for='username')
+            | CNIC
+            sup *
+          input#cnic(type='text' name='cnic' placeholder='Enter Your CNIC Number')
+          br
+        //- Phone Number
+        #phone.input-box
+          label.label(for='username')
+            | Phone Number
+            sup *
+          input#phone2(type='tel' name='phone' placeholder='Enter Phone Number' required='')
+        //- Password
+        .input-box
+          label.label(for='username')
+            | Password
+            sup *
+          input#password(type='password' name='password' placeholder='Enter Password' required='')
+          .eye-container
+            i.fa-solid.fa-eye.icon.open
+            i.fa-solid.fa-eye-slash.icon.closed
+        #pswd-err
+          i#length.pswd-msg.valid Password must be of 8 characters
+          i#capital.pswd-msg.valid Password must contain uppercase
+          i#letter.pswd-msg.valid Password must contain lowercase
+          i#number.pswd-msg.valid Password must contain integer
+          span#final-pswd.msg-wrong-pswd Password is valid
+        //- Confirm Password
+        .input-box
+          label.label(for='username')
+            | Confirm Password
+            sup *
+          input(type='password' name='confirmPassword' placeholder='Confirm Password' required='')
+          .eye-container.confirm
+            i.fa-solid.fa-eye.icon.open
+            i.fa-solid.fa-eye-slash.icon.closed
+        #confirm-err
+          i#err-confirm.valid Password Doesn&apos;t Match
+        //- Register Button
+        .input-box
+          input#register(type='button' value='Register')
+        //- Login Link
+        .links
+          a#forgot(href='/login') LOGIN
+
+block scripts 
+    script(src="/js/signup.js")

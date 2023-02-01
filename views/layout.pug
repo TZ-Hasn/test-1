@@ -1,0 +1,139 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Navigation Menu
+  link(rel='stylesheet' href='/stylesheets/nav-bar.css')
+  link(rel='stylesheet' href='/stylesheets/footer.css')
+  link(rel='stylesheet' href='/stylesheets/hamburger-style.css')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,400&family=Roboto&family=Ubuntu&display=swap' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css')
+  //- Receiving Style sheets
+  block style 
+  block headScript
+body
+  header
+    //- Hamburger
+    #hamburger-main
+      input#checkbox(type='checkbox')
+      label.hamburger-container(for='checkbox')
+        .spinner.top
+        .spinner.middle
+        .spinner.bottem
+    //- Vertical Hidden Navbar
+    #nav-container
+      nav
+        ul.poppins
+          // Logo
+          li.items
+            a(href='/')
+              // <img src="/img/Resized-Logo.png" alt="logo">
+          li.items
+            a.normalize-link(href='/')
+              i.fa-solid.fa-house.nav-icons
+              b
+              span.text-btn Home
+          li.items
+            a.normalize-link(href='/Services')
+              i.fa-solid.fa-user-gear.nav-icons
+              b
+              span.text-btn Services
+          li.items
+            a.normalize-link(href='/Pay-Bills')
+              i.fa-solid.fa-file-invoice-dollar.nav-icons
+              b
+              span.text-btn Pay Bill
+          li.items
+            a.normalize-link(href='/Apply')
+              i.fa-solid.fa-house-signal.nav-icons
+              b
+              span.text-btn Apply Now
+          li.items
+            a.normalize-link(href='/Complains')
+              i.fa-solid.fa-hospital-user.nav-icons
+              b
+              span.text-btn Complains
+          li.items
+            a.normalize-link(href='/Reviews')
+              i.fa-solid.fa-ranking-star.nav-icons
+              b
+              span.text-btn
+                | Reviews
+          li.items
+            a.normalize-link(href='/Contact')
+              i.fa-solid.fa-blender-phone.nav-icons
+              b
+              span.text-btn Contacts Us
+    // Horizontal Nav Bar
+    #h-nav-container
+      nav
+        ul
+          li
+            a(href='/')
+              img(src='/img/Resized-Logo.png' alt='')
+          li.poppins 
+            a(href='/login') Login/SignUp
+  //- Block to receive body Content
+  block bodyContent
+  // footer
+  .main-footer-container
+    footer.footer-inner-container
+      .waves
+        #wave1.wave
+        #wave2.wave
+        #wave3.wave
+        #wave4.wave
+      .footer-content-container
+        .logo-container
+          .footer-logo
+            a.footer-logo-link(href='/')
+              img(src='/img/Resized-Logo.png' alt='')
+          .footer-tower
+            #signal-container
+              #signal-1.signals
+              #signal-2.signals
+              #signal-3.signals
+            img(src='/img/signal-tower copy.png' alt='Singaling Tower')
+        .footer-cards
+          .footer-content-column.company
+            h2 Company
+            ul
+              li
+                a(href='/contact') Contact Us
+              li
+                a(href='#news-container') News
+          .footer-content-column.quick-links
+            h2 Quick Links
+            ul
+              li
+                a(href='/apply') Apply For New Connection
+              li
+                a(href='services') Services
+              li
+                a(href='/Pay-Bills') Pay Bills
+              li
+                a(href='/Reviews') Reviews
+              li
+                a(href='#packages-container') Packages
+          .footer-content-column.contact
+            h2 Contact
+            ul
+              li
+                | Phone: 
+                u +92 300 1234567
+              li
+                | E-Mail: 
+                u NETBANK@gmail.com
+      #back-to-top
+        a(href='#')
+          i.fa-solid.fa-arrow-up-from-bracket
+      .footer-copyright
+        .footer-copyright-wrapper
+          p.footer-copyright-text
+            a.footer-copyright-link(href='#' target='_self')
+              | &copy;2022 Copyright NETBANK | All rights
+              | reserved.
+script(src='/js/navigation.js')
+//- Receiving Js scripts
+block scripts
