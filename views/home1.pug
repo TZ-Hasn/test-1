@@ -1,0 +1,63 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        link(rel='stylesheet' href='/static/styles/home.css')
+        title Home
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous' referrerpolicy='no-referrer')
+        link(rel='preconnect' href='https://fonts.googleapis.com')
+        link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+        link(href='https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap' rel='stylesheet')
+    main#frstpage
+        header#nav-bar
+            .header-contant
+                .logo tempmail
+                .nav-manu
+                    a(href='/') Home
+                    a(href='/services') Services
+                    a(href='/blogs') Blogs
+                    a(href='/policy') privacy policy
+                .loginbtn Login
+        section.main-body-section
+            .main-manu
+                #heading
+                    h2 Your tempmail address is ready
+                .mail-section
+                    form(action='')
+                        .d-form
+                            input#f-input(type='text' placeholder='example@mail.com' value=userMail readonly)
+                            button#copyBtn.btn(type='button')
+                                i.fa-light.fa-copy
+                                |Copy
+                        .t-btn
+                            a.btn(href='/' type='button')
+                                i.fa-solid.fa-arrows-rotate
+                                |  Refresh
+                            a#changeBtn.btn(href='/mail/change' type='button')
+                                i.fa-regular.fa-pen-to-square
+                                |  Change
+                            a#deleteBtn.btn(href='/mail/delete' type='button')
+                                i.fa-solid.fa-trash-can
+                                |  Delete
+                .container
+                    h1 Mail Box
+                    div!=userMsgs
+    .work-heading
+        h2 How to use temporary email?
+    section.work
+        .content-section
+            .box
+                .box-text
+                    .first 1
+                    .detail Copy email address from the top left corner
+                .box-text
+                    .first 2
+                    .detail Use this to sign up on websites, social media, etc
+                .box-text
+                    .first 3
+                    .detail Read incoming emails on this page in the left side
+    section
+        span What is disposable temporary email?
+    script(src='/static/js/home.js')

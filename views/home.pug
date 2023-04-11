@@ -1,0 +1,73 @@
+extends layout.pug
+block pageTitle
+    title Home
+block style
+    meta(name="description", content="Disposable email - is a free email service that allows to receive email at a temporary address that self-destructed after a certain time elapses. It is also&nbsp;...")
+    meta(name="keywords", content="tempmail; temporarymail; temporarymail.com; temp email;tempmailplus; best temp mail; temp gmail; get temp mail; temp mail id; temp mail id; tempmail edu; temp mail address; temp mailplus; disposable mail; temp mail address	;")
+    link(rel="stylesheet" href="/static/styles/home.css")
+    link(rel="stylesheet" href="contact.css")
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous' referrerpolicy='no-referrer')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap' rel='stylesheet')
+block bodyContent
+    // our website
+    main#frstpage
+        section.main-body-section
+            .main-manu
+                #heading
+                    h2 Your tempmail address is ready
+                .mail-section
+                    form(action='')
+                        .d-form
+                            input#f-input(type='text' placeholder='example@mail.com' value=userMail readonly)
+                        .t-btn
+                            button.btn#copyBtn(type='button')
+                                i.fa-light.fa-copy
+                                |  Copy
+                            a.btn(href='/')
+                                i.fa-solid.fa-arrows-rotate
+                                |  Refresh
+                            a.btn(href='/mail/change')
+                                i.fa-regular.fa-pen-to-square
+                                |  Change
+                            a.btn(href='/mail/delete')
+                                i.fa-solid.fa-trash-can
+                                |  Delete
+                .container
+                    h1 Mail Box
+                    div!=userMsgs
+    .work-heading
+        h2 How to use temporary email?
+    section.work
+        .content-section
+            .box
+                .box-text
+                    .first 1
+                    .detail Copy email address from the top left corner
+                .box-text
+                    .first 2
+                    .detail Use this to sign up on websites, social media, etc
+                .box-text
+                    .first 3
+                    .detail Read incoming emails on this page in the left side
+    // --------- footer ---------
+    section.footer
+        h4 About Us
+        p
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem explicabo animi obcaecati nemo corrupti, illo
+            | minus architecto deleniti
+            br
+            | tempora ullam exercitationem mollitia itaque optio. Sint itaque reiciendis odit
+            |             laudantium quia.
+        .icons
+            i.fa.fa-brands.fa-facebook
+            i.fa.fa-brands.fa-twitter
+            i.fa.fa-brands.fa-instagram
+            i.fa.fa-brands.fa-linkedin
+        p
+            | made with 
+            i.fa-regular.fa-heart
+            |  by HHS Projects
+block scripts 
+    script(src="/static/js/home.js")
