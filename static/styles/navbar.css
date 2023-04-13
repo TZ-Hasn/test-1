@@ -33,6 +33,7 @@
     margin-top: 3px;
 }
 #sidebartogglemanu{
+	z-index: 9;
     width: 220px;
     background-color: blueviolet;
     height: 100%;
