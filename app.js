@@ -8,7 +8,7 @@ const mailController = require(__dirname + '/controllers/mail.controller')
 
 // Server Variables
 const app = express();
-const port = process.env.PORT;
+const port =  process.env.PORT || 80;
 
 // Session Middleware
 app.use(session({

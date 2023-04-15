@@ -29,6 +29,7 @@
 .spiner{
     width: 20px;
     height: 3px;
+    transition: all ease-in-out .5s;
     background-color: white;
     margin-top: 3px;
 }
@@ -37,7 +38,7 @@
     width: 220px;
     background-color: blueviolet;
     height: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     margin-top: 60px;
