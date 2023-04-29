@@ -53,6 +53,12 @@ app.get('/contact', (req, res)=>{
    res.render('contact.pug')
 })
 
+// /mail/receive/?::GET
+app.get('/mail/receive/:id', mailController.getMessageById)
+
+// /mail/receive::GET
+app.get('/mail/receive', mailController.getMessages)
+
 // /mail/Change::GET
 app.get('/mail/change', mailController.changeMailGet)
 

@@ -1,73 +1,151 @@
-extends layout.pug
-block pageTitle
-    title Home
-block style
-    meta(name="description", content="Disposable email - is a free email service that allows to receive email at a temporary address that self-destructed after a certain time elapses. It is also&nbsp;...")
-    meta(name="keywords", content="tempmail; temporarymail; temporarymail.com; temp email;tempmailplus; best temp mail; temp gmail; get temp mail; temp mail id; temp mail id; tempmail edu; temp mail address; temp mailplus; disposable mail; temp mail address	;")
-    link(rel="stylesheet" href="/static/styles/home.css")
-    link(rel="stylesheet" href="contact.css")
-    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous' referrerpolicy='no-referrer')
-    link(rel='preconnect' href='https://fonts.googleapis.com')
-    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
-    link(href='https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap' rel='stylesheet')
-block bodyContent
-    // our website
-    main#frstpage
-        section.main-body-section
-            .main-manu
-                #heading
-                    h2 Your tempmail address is ready
-                .mail-section
-                    form(action='')
-                        .d-form
-                            input#f-input(type='text' placeholder='example@mail.com' value=userMail readonly)
-                        .t-btn
-                            button.btn#copyBtn(type='button')
-                                i.fa-light.fa-copy
-                                |  Copy
-                            a.btn(href='/')
-                                i.fa-solid.fa-arrows-rotate
-                                |  Refresh
-                            a.btn(href='/mail/change')
-                                i.fa-regular.fa-pen-to-square
-                                |  Change
-                            a.btn(href='/mail/delete')
-                                i.fa-solid.fa-trash-can
-                                |  Delete
-                .container
-                    h1 Mail Box
-                    div!=userMsgs
-    .work-heading
-        h2 How to use temporary email?
-    section.work
-        .content-section
-            .box
-                .box-text
-                    .first 1
-                    .detail Copy email address from the top left corner
-                .box-text
-                    .first 2
-                    .detail Use this to sign up on websites, social media, etc
-                .box-text
-                    .first 3
-                    .detail Read incoming emails on this page in the left side
-    // --------- footer ---------
-    section.footer
-        h4 About Us
-        p
-            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem explicabo animi obcaecati nemo corrupti, illo
-            | minus architecto deleniti
-            br
-            | tempora ullam exercitationem mollitia itaque optio. Sint itaque reiciendis odit
-            |             laudantium quia.
-        .icons
-            i.fa.fa-brands.fa-facebook
-            i.fa.fa-brands.fa-twitter
-            i.fa.fa-brands.fa-instagram
-            i.fa.fa-brands.fa-linkedin
-        p
-            | made with 
-            i.fa-regular.fa-heart
-            |  by HHS Projects
-block scripts 
-    script(src="/static/js/home.js")
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, min-width=230px, initial-scale=1.0')
+  title TempMale
+  link(rel='stylesheet' href='/static/styles/home.css')
+  script(src='https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js')
+header
+  .navbar
+    nav.x-navbar
+      ul
+        li
+          a.link-reset(href='/')
+            iconify-icon(icon='mdi:envelope-variant')  
+            h3 Tempmale
+        li
+          a.link-reset(href='/')
+            iconify-icon(icon='material-symbols:home')  
+            |               Home
+        li
+          a.link-reset(href='/Blogs')
+            iconify-icon(icon='cib:blogger-b')
+            |               Blogs
+        li
+          a.link-reset(href='/Privacy')
+            iconify-icon(icon='icon-park-outline:personal-privacy')
+            |               Privacy
+        li
+          a.link-reset(href='/about')
+            iconify-icon(icon='ic:baseline-group')
+            |               About Us
+        li
+          a.link-reset(href='/contact')
+            iconify-icon(icon='ph:phone')
+            |               Contact Us
+    // Responsive Navbar
+    nav.y-navbar
+      .header
+        input#toglebarbtn(type='checkbox')
+        label.manuicontoggle(for='toglebarbtn')
+          .spiner.top
+          .spiner.middle
+          .spiner.bottem
+        #sidebartogglemanu.manu
+          ul
+            li
+              a(href='#') Home
+            li
+              a(href='#') about
+            li
+              a(href='#') Service
+            li
+              a(href='#') contact us
+main
+  .main-container
+    h1 Your Disposable E-Mail Address!
+    // <div class="user-mail-container">
+    .mail-input-container
+      iconify-icon(icon='uil:envelope')
+      input#user-mail(type='text' name='mail'  value=userMail readOnly)
+      iconify-icon(icon='eos-icons:loading')
+      b 0
+      iconify-icon(icon='material-symbols:content-copy')
+      .copy-msg
+        i
+        |           Click to copy!
+    // Buttons
+    .buttons-container
+      .btn.change-btn
+        iconify-icon(icon='pajamas:retry')
+        |           Change
+      .btn.refresh-btn
+        iconify-icon(icon='material-symbols:refresh')
+        |           Refresh
+  // inbox
+  .inbox-container
+    .heading
+      h1 IN-BOX
+    .header
+      b Sender:
+      .sub
+      b.sub Subject:
+      .sub
+      b.sub View:
+      // <div class="triangle"></div>
+    // Empty Message Box
+    .empty-box-msg
+      .icon-empty-box
+        // <iconify-icon icon="mingcute:loading-3-fill"></iconify-icon>
+        iconify-icon(icon='ph:envelope-simple-open-thin')
+        iconify-icon(icon='line-md:loading-twotone-loop')
+      h2 Your Inbox is Empty!
+      h3 Refresh Now!
+    .emails-container
+    //-   .mails
+    //-     .mail-msg
+    //-       a.link-reset(href='/mail/receive/644abbe72a1b022146264f6d')
+    //-         .col1
+    //-           | Font Awesome
+    //-           br
+    //-           |                 hello@fontawesome.com
+    //-         .col2
+    //-           | Confirm Your Font Awesome Account Email Address.......
+    //-         dis.col3
+    //-           iconify-icon.arrowicon(icon='material-symbols:arrow-circle-right-outline-rounded')
+    //-   .mails
+    //-     .mail-msg
+    //-       a.link-reset(href='/mail/receive/644abbe72a1b022146264f6d')
+    //-         .col1
+    //-           | Font Awesome
+    //-           br
+    //-           |                 hello@fontawesome.com
+    //-         .col2
+    //-           | Confirm Your Font Awesome Account Email Address
+    //-         dis.col3
+    //-           iconify-icon.arrowicon(icon='material-symbols:arrow-circle-right-outline-rounded')
+footer
+  .footer-container
+    .footer-header
+    .footer-logo
+      iconify-icon(icon='mdi:envelope-variant')  
+      h3 Tempmale
+    .footer-content
+      .footer-content-containers
+        h2 Quick Links
+        ul
+          li
+            a.link-reset(href='/blogs') Blogs
+          li
+            a.link-reset(href='/About') About Us
+          li
+            a.link-reset(href='/Privacy') Privacy Policy
+      .footer-content-containers.contact
+        h2 Contact
+        ul
+          li Phone: +92300-1234567
+          li
+            | Email:
+            a.link-reset(href='mailto:shafiqahmadpkp747@gmail.com') Click Me!
+          li
+            | Whatsapp:
+            a.link-reset(href='https://api.whatsapp.com/send/?phone=923030172929')
+              iconify-icon(icon='logos:whatsapp-icon')
+              |                 Click Me!
+    .our-link
+      | A Project of 
+      a(href='https://micronicsoft.com/') Micronicsoft.com
+    .footer-end
+      h3 &copy; 2023 Copyright. Tempmale All right reserved.
+script(src="/static/js/home.js") 
